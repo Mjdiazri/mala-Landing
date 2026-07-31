@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MALA - Preloader Fiel al Diseño</title>
+  
+  <!-- Estilos globales o de otros compañeros -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Fuentes Google (Cinzel para títulos / Inter para cuerpo) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="mala-hero-body-override">
+
+  <!-- ========================================================= -->
+  <!-- SECCIÓN INTERACTIVA HERO PRELOADER (ISLADA CON PREFIJOS) -->
+  <!-- ========================================================= -->
+  <div id="mala-hero-splash-screen" class="mala-hero-splash-overlay">
+    
+    <!-- EFECTO DE IGNICIÓN EN FONDO (ESTADO 2 - DURANTE HOLD) -->
+    <div class="mala-hero-ignite-effect" id="mala-hero-igniteEffect"></div>
+
+    <div class="mala-hero-splash-content">
+      
+      <!-- LOGO PRINCIPAL MALA -->
+      <div class="mala-hero-logo-container">
+        <h1 class="mala-hero-logo-title">MALA</h1>
+        <span class="mala-hero-logo-subtitle">COCINA DE CHENGDU</span>
+      </div>
+
+      <!-- ANILLO E INDICACIÓN INTERACTIVA -->
+      <div class="mala-hero-hold-container" id="mala-hero-holdBtn">
+        
+        <!-- CONTENEDOR CONTENEDOR DE CHISPAS EN VIVO -->
+        <div class="mala-hero-fire-sparks" id="mala-hero-fireSparks"></div>
+
+        <svg class="mala-hero-progress-ring" width="160" height="160">
+          <!-- Fondo del anillo (Gris oscuro) -->
+          <circle class="mala-hero-progress-ring__circle-bg" stroke="#333" stroke-width="3" fill="transparent" r="70" cx="80" cy="80"/>
+          <!-- Progreso del anillo (Rojo Sichuan) -->
+          <circle class="mala-hero-progress-ring__circle" id="mala-hero-progressCircle" stroke="#B22222" stroke-width="4" fill="transparent" r="70" cx="80" cy="80"/>
+        </svg>
+
+        <!-- Texto centrado dentro del círculo -->
+        <div class="mala-hero-hold-text">
+          <p class="mala-hero-hold-main-text">MANTÉN<br>PRESIONADO</p>
+          <p class="mala-hero-hold-sub-text">para despertar el fuego</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PATRONES DE NUBES DORADAS DESPLAZABLES -->
+    <div class="mala-hero-cloud-wrapper mala-hero-cloud-left" id="mala-hero-cloudLeft">
+      <img src="/img/nube izquierda.png" alt="Nube Izquierda">
+    </div>
+    <div class="mala-hero-cloud-wrapper mala-hero-cloud-right" id="mala-hero-cloudRight">
+      <img src="/img/nube derecha.png" alt="Nube Derecha">
+    </div>
+
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL DE LA WEB (AQUÍ UNEN SUS COMPONENTES LOS DEMÁS) -->
+  <main class="main-website">
+    <h2>Página Real Revelada</h2>
+    <p>Este es tu contenido principal.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
