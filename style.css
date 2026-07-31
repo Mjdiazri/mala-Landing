@@ -1,3 +1,23 @@
+/*importacion font*/
+.cinzel-decorative-regular {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cinzel-decorative-bold {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cinzel-decorative-black {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+
 /*ESTILOS CARRUSEL SOBRE NOSOTROS*/
 #contenedor-sobreNostros #contenedor-textoimg{
     width: 100%;
@@ -17,14 +37,22 @@
     font-size: 2vw;
     margin-bottom: 1.3vw; 
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.24);
+    background-color: rgba(0, 0, 0, 0.345);
+    color: rgb(212, 160, 23);
 }
 .parrafo{
     width: 70%;
     height: auto;   
     font-size: 1.5vw; /*revisar si es mejor con esta opcion */
     text-align:justify;
-    background-color: rgba(0, 0, 0, 0.24);
+    background-color: rgba(0, 0, 0, 0.438);
+    color:  rgb(239, 230, 215);
+}
+
+.parrafo1{
+    background-color: rgba(0, 0, 0, 0.438);
+    text-align:center;
+    color:  rgb(239, 230, 215);
 }
 
 .divparrafo{
@@ -34,4 +62,58 @@
     align-items: center;   
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)); 
 }
-    
+
+/*Estilos fotos*/
+
+.contenedor-equipo{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 13px;
+    width: 90%;
+    margin-top: 25px;    
+} 
+
+.contenedor-equipo .contenedor-foto{
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    height: auto;
+    border: solid 2px rgb(140, 28, 19);
+     overflow: hidden;  
+}
+
+.contenedor-equipo .foto{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center ;
+}
+
+.contenedor-equipo .card-body {
+    padding: 8px;         
+    text-align: center;
+}
+
+
+
+.contenedor-equipo .foto{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center ;
+}
+
+.contenedor-equipo .card-body {
+    padding: 8px;         
+    text-align: center;
+}
+
+.div-nombrefoto{
+    background: black;
+}
+.nombreEquipo{
+    font-family: "Cinzel Decorative";
+    font-size: medium;
+    color: rgb(239, 230, 215);
+}
