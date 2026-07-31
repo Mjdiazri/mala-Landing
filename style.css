@@ -466,3 +466,672 @@ body {
     }
 
 }
+
+/* ==========================================================================
+   CARRITO DE COMPRAS
+   ========================================================================== */
+
+.shopping-cart {
+
+    position: fixed;
+
+    top: 0;
+
+    right: 0;
+
+    width: 420px;
+
+    height: 100vh;
+
+    background: #111111;
+
+    border-left: 1px solid rgba(212, 160, 23, .20);
+
+    box-shadow: -10px 0 30px rgba(0, 0, 0, .40);
+
+    z-index: 2000;
+
+    transition: right .4s ease;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow-y: auto;
+
+}
+
+.shopping-cart.active {
+
+    right: 0;
+
+}
+
+/* ==========================================================================
+   OVERLAY
+   ========================================================================== */
+
+.cart-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .55);
+
+    backdrop-filter: blur(4px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .3s;
+
+    z-index: 1900;
+
+}
+
+/* ==========================================================================
+  FIN - CARRITO DE COMPRAS
+   ========================================================================== */
+
+/* ==========================================================================
+   ENCABEZADO
+   ========================================================================== */
+
+.cart-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 2rem;
+
+    border-bottom: 1px solid rgba(212, 160, 23, .15);
+
+}
+
+/* ==========================================================================
+   TITULO
+   ========================================================================== */
+
+.cart-title {
+
+    font-family: var(--font-title);
+
+    color: var(--color-secondary);
+
+    font-size: 1.8rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+/* ==========================================================================
+   BOTON CERRADO
+   ========================================================================== */
+
+.cart-close {
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.cart-close:hover {
+
+    transform: rotate(90deg);
+
+}
+
+/* ==========================================================================
+   PRODUCTOS DEL CARRITO
+   ========================================================================== */
+
+.cart-items {
+
+    flex: 1;
+
+    padding: 2rem;
+
+}
+
+.cart-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 1rem;
+
+    padding-bottom: 1.8rem;
+
+    margin-bottom: 1.8rem;
+
+    border-bottom: 1px solid rgba(212, 160, 23, .15);
+
+}
+
+.cart-item:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* Imagen */
+
+.cart-item-image {
+
+    flex-shrink: 0;
+
+}
+
+.cart-item-image img {
+
+    width: 90px;
+
+    height: 90px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(212, 160, 23, .20);
+
+}
+
+
+/* Información */
+
+.cart-item-info {
+
+    flex: 1;
+
+}
+
+.cart-item-title {
+
+    font-family: var(--font-title);
+
+    color: var(--color-secondary);
+
+    font-size: 1.1rem;
+
+    margin-bottom: .5rem;
+
+}
+
+.cart-item-price {
+
+    color: var(--color-primary);
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
+
+    margin-bottom: 1rem;
+
+}
+
+
+/* Cantidad */
+
+.quantity-control {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 110px;
+
+    height: 40px;
+
+    border: 1px solid rgba(212, 160, 23, .25);
+
+    border-radius: 8px;
+
+}
+
+.quantity-btn {
+
+    width: 36px;
+
+    height: 100%;
+
+    border: none;
+
+    background: none;
+
+    color: var(--color-secondary);
+
+    cursor: pointer;
+
+    font-size: 1.3rem;
+
+    transition: .3s;
+
+}
+
+.quantity-btn:hover {
+
+    background: rgba(212, 160, 23, .10);
+
+}
+
+.quantity {
+
+    color: var(--color-light);
+
+    font-weight: 600;
+
+}
+
+
+/* Botón eliminar */
+
+.remove-item {
+
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.remove-item img {
+
+    width: 22px;
+
+}
+
+.remove-item:hover {
+
+    transform: scale(1.15);
+
+}
+
+/* ==========================================================================
+RESUMEN DEL CARRITO
+   ========================================================================== */
+
+.cart-summary {
+
+    padding: 2rem;
+
+    border-top: 1px solid rgba(212, 160, 23, .15);
+
+}
+
+.summary-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 1rem;
+
+    font-size: 1rem;
+
+    color: var(--color-light);
+
+}
+
+.summary-row.total {
+
+    margin-top: 1.5rem;
+
+    padding-top: 1rem;
+
+    border-top: 1px solid rgba(212, 160, 23, .20);
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    color: var(--color-secondary);
+
+}
+
+/* ==========================================================================
+   16. BOTONES DEL CARRITO
+   ========================================================================== */
+
+.cart-actions {
+
+    padding: 0 2rem 2rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+
+}
+
+
+/* Botón principal */
+
+.btn-checkout {
+
+    width: 100%;
+
+    padding: 1rem;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: var(--color-secondary);
+
+    color: var(--color-dark);
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+.btn-checkout:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(212, 160, 23, .35);
+
+}
+
+
+/* Botón secundario */
+
+.btn-continue {
+
+    width: 100%;
+
+    padding: 1rem;
+
+    border: 1px solid rgba(212, 160, 23, .25);
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--color-light);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+.btn-continue:hover {
+
+    background: rgba(212, 160, 23, .08);
+
+}
+
+/* ==========================================================================
+   17. RESPONSIVE
+   --------------------------------------------------------------------------
+   Responsable: Miguel Ospina
+
+   Adaptación del carrito para dispositivos móviles y tablets.
+
+   Breakpoints:
+   - <= 991px : Tablets
+   - <= 576px : Celulares
+   ========================================================================== */
+
+
+/* ==========================================================================
+   TABLETS
+   ========================================================================== */
+
+@media (max-width: 991px){
+
+    /* Panel del carrito */
+
+    .shopping-cart{
+
+        width: 380px;
+
+    }
+
+    /* Header */
+
+    .cart-header{
+
+        padding: 1.5rem;
+
+    }
+
+    /* Productos */
+
+    .cart-items{
+
+        padding: 1.5rem;
+
+    }
+
+    /* Resumen */
+
+    .cart-summary{
+
+        padding: 1.5rem;
+
+    }
+
+    /* Botones */
+
+    .cart-actions{
+
+        padding: 0 1.5rem 1.5rem;
+
+    }
+
+}
+
+
+/* ==========================================================================
+   CELULARES
+   ========================================================================== */
+
+@media (max-width: 576px){
+
+    /* Panel del carrito */
+
+    .shopping-cart{
+
+        width: 100%;
+
+        right: -100%;
+
+        border-left: none;
+
+    }
+
+    /* Estado abierto */
+
+    .shopping-cart.active{
+
+        right: 0;
+
+    }
+
+    /* Header */
+
+    .cart-header{
+
+        padding: 1.25rem;
+
+    }
+
+    /* Título */
+
+    .cart-title{
+
+        font-size: 1.4rem;
+
+    }
+
+    /* Productos */
+
+    .cart-items{
+
+        padding: 1.25rem;
+
+    }
+
+    /* Tarjeta del producto */
+
+    .cart-item{
+
+        gap: .8rem;
+
+    }
+
+    /* Imagen */
+
+    .cart-item-image img{
+
+        width: 75px;
+
+        height: 75px;
+
+    }
+
+    /* Nombre */
+
+    .cart-item-title{
+
+        font-size: 1rem;
+
+    }
+
+    /* Precio */
+
+    .cart-item-price{
+
+        font-size: 1rem;
+
+    }
+
+    /* Cantidad */
+
+    .quantity-control{
+
+        width: 100px;
+
+        height: 36px;
+
+    }
+
+    .quantity-btn{
+
+        width: 32px;
+
+        font-size: 1.1rem;
+
+    }
+
+    /* Botón eliminar */
+
+    .remove-item img{
+
+        width: 18px;
+
+    }
+
+    /* Resumen */
+
+    .cart-summary{
+
+        padding: 1.25rem;
+
+    }
+
+    .summary-row{
+
+        font-size: .95rem;
+
+    }
+
+    .summary-row.total{
+
+        font-size: 1.1rem;
+
+    }
+
+    /* Botones */
+
+    .cart-actions{
+
+        padding: 0 1.25rem 1.25rem;
+
+    }
+
+    .btn-checkout,
+
+    .btn-continue{
+
+        padding: .9rem;
+
+        font-size: .95rem;
+
+    }
+
+}
+
+
+/* ==========================================================================
+   CELULARES PEQUEÑOS
+   ========================================================================== */
+
+@media (max-width: 360px){
+
+    .cart-item{
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+    }
+
+    .cart-item-info{
+
+        width: 100%;
+
+    }
+
+    .quantity-control{
+
+        margin: auto;
+
+    }
+
+    .remove-item{
+
+        align-self: flex-end;
+
+    }
+
+}
