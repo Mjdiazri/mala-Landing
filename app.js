@@ -37,4 +37,25 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error("El formulario 'contactForm' no fue encontrado");
     }
+
+    const subscribeForm = document.getElementById('subscribeForm');
+    const subscribeMessage = document.getElementById('subscribe-message');
+
+    if (subscribeForm) {
+        subscribeForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            if (subscribeMessage) {
+                subscribeMessage.style.display = 'block';
+            }
+            
+            subscribeForm.reset();
+
+            setTimeout(function() {
+                if (subscribeMessage) {
+                    subscribeMessage.style.display = 'none';
+                }
+            }, 4000);
+        });
+    }
 });
