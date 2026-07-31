@@ -10,6 +10,8 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <!--Header-->
@@ -22,7 +24,97 @@
         <!--Sobre nosotros Monica-->
         <section></section>
         <!--Contactanos Michael-->
-        <section></section>
+        <section class="mala-m-contact-section d-flex align-items-center" style="min-height: 100vh;">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+                <div class="wrapper">
+                  <div class="row no-gutters justify-content-center align-items-center gap-4"> 
+                    
+                    <div class="col-lg-5 d-flex align-items-stretch">
+                      <div class="mala-m-contact-info w-100 p-4">
+                        <h3 class="mb-4">Contáctanos</h3>
+                        
+                        <div class="mala-m-contact-item w-100 d-flex align-items-start mb-4">
+                          <div class="mala-m-item-icon d-flex align-items-center justify-content-center">
+                            <img src="./iconos/sabores-mala.png" alt="Ubicación" class="img-fluid">
+                          </div>
+                          <div class="mala-m-item-text pl-4">
+                            <p><span>Dirección:</span> Calle 95B #89A - Sur 67, Colombia</p>
+                          </div>
+                        </div>
+                        
+                        <div class="mala-m-contact-item w-100 d-flex align-items-start mb-4">
+                          <div class="mala-m-item-icon d-flex align-items-center justify-content-center">
+                            <img src="./iconos/ambiente-tradicional.png" alt="Teléfono" class="img-fluid">
+                          </div>
+                          <div class="mala-m-item-text pl-4">
+                            <p><span>Teléfono:</span> <a href="tel:+573046460015">(+57) 304 646 0015</a></p>
+                          </div>
+                        </div>
+                        
+                        <div class="mala-m-contact-item w-100 d-flex align-items-start mb-4">
+                          <div class="mala-m-item-icon d-flex align-items-center justify-content-center">
+                            <img src="./iconos/cocina-autentica.png" alt="Email" class="img-fluid">
+                          </div>
+                          <div class="mala-m-item-text pl-4">
+                            <p><span>Email:</span> <a href="mailto:contacto@mala.com">contacto@mala.com</a></p>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-6"> 
+                      <div class="mala-m-form-glass-card w-100 p-4 p-md-5">
+                        <div class="mala-m-form-header text-center mb-4">
+                          <img src="./iconos/icono-principal.png" alt="Mensaje" class="img-fluid mb-2" style="width: 45px;">
+                          <h4 class="text-white mb-0" style="font-size: 1.2rem;">Déjanos tu mensaje</h4>
+                        </div>
+
+                        <div id="form-message-warning" class="mb-3"></div> 
+                        <div id="form-message-success" class="alert alert-success mb-3" style="display: none;" role="alert">
+                          Tu mensaje fue enviado con éxito, muchas gracias.
+                        </div>
+                        
+                        <form method="POST" id="contactForm" name="contactForm">
+                          <div class="row">
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group">
+                                <input type="text" class="form-control mala-m-input" name="name" id="name" placeholder="Nombre" required>
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3"> 
+                              <div class="form-group">
+                                <input type="email" class="form-control mala-m-input" name="email" id="email" placeholder="Correo Electrónico" required>
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group">
+                                <input type="text" class="form-control mala-m-input" name="subject" id="subject" placeholder="Asunto" required>
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group">
+                                <textarea name="message" class="form-control mala-m-input" id="message" cols="30" rows="3" placeholder="Mensaje" required></textarea>
+                              </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                              <div class="form-group text-center">
+                                <input type="submit" value="Enviar" class="btn mala-m-btn-submit w-100">
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
     </main>
     <!--Footer-->
     <footer></footer>
@@ -34,5 +126,7 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
+    <script src="./app.js"></script>
   </body>
 </html>

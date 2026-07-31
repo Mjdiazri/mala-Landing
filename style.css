@@ -1,0 +1,105 @@
+.mala-m-contact-section {
+  background: linear-gradient(rgba(31, 31, 31, 0.221), rgba(31, 31, 31, 0.85)), 
+              url('/img/Patio_chino_bajo\ _luvia.png') no-repeat center center;
+  background-size: cover;
+  padding: 5rem 0;
+  min-height: 100vh;
+  color: #F8F5EF;
+}
+
+.mala-m-contact-info h3 {
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: #D4A017;
+}
+
+.mala-m-contact-item {
+  margin-bottom: 1.5rem;
+}
+
+.mala-m-contact-item .mala-m-item-icon {
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: #B22222;
+}
+
+.mala-m-contact-item .mala-m-item-text p {
+  margin-bottom: 0;
+  color: rgba(248, 245, 239, 0.7);
+  font-size: 0.9rem;
+}
+
+.mala-m-contact-item .mala-m-item-text span {
+  display: block;
+  color: #D4A017;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.mala-m-contact-item .mala-m-item-text a {
+  color: rgba(248, 245, 239, 0.7);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.mala-m-contact-item .mala-m-item-text a:hover {
+  color: #D4A017;
+}
+
+.mala-m-form-glass-card {
+  background-color: rgba(31, 31, 31, 0.45); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border-radius: 12px;
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  color: #F8F5EF;
+}
+
+.mala-m-form-header h4 {
+  color: #F8F5EF;
+  font-weight: 500;
+}
+
+.mala-m-input {
+  background-color: rgba(248, 245, 239, 0.08) !important;
+  color: #F8F5EF !important;
+  border: 1px solid rgba(248, 245, 239, 0.15) !important;
+  border-radius: 6px;
+  padding: 12px 15px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.mala-m-input::placeholder {
+  color: rgba(248, 245, 239, 0.5);
+}
+
+.mala-m-input:focus {
+  background-color: rgba(248, 245, 239, 0.15) !important;
+  border-color: #D4A017 !important;
+  box-shadow: 0 0 8px rgba(212, 160, 23, 0.4) !important;
+  outline: none;
+}
+
+.mala-m-btn-submit {
+  background-color: #B22222;
+  color: #F8F5EF;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s background-color;
+  cursor: pointer;
+}
+
+.mala-m-btn-submit:hover {
+  background-color: #D4A017;
+  color: #1F1F1F;
+}
