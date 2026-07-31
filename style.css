@@ -1,0 +1,468 @@
+/* =============================================================================
+   PROYECTO: MALA - Cocina de Chengdu
+   MÓDULO: Barra de Navegación (Navbar)
+   RESPONSABLE: Miguel Ospina
+
+   DESCRIPCIÓN:
+   Estilos correspondientes a la barra de navegación principal del sitio.
+   Incluye:
+   01. Variables Globales
+   02. Reset General
+   03. Estilos Generales
+   04. Navbar
+   05. Logo
+   06. Menú de Navegación
+   07. Separadores
+   08. Carrito de Compras
+   09. Badge del Carrito
+   10. Botón Hamburguesa
+   11. Responsive
+
+============================================================================= */
+
+
+/* ==========================================================================
+   01. VARIABLES GLOBALES
+   ========================================================================== */
+
+:root {
+
+    /* Colores */
+    --color-primary: #B22222;
+    --color-secondary: #D4A017;
+    --color-dark: #1F1F1F;
+    --color-light: #F8F5EF;
+    --color-white: #FFFFFF;
+    --color-gray: #E8E4DC;
+
+    /* Tipografías */
+    --font-title: "Cinzel", serif;
+    --font-text: "Inter", sans-serif;
+
+    /* Transiciones */
+    --transition: .3s ease;
+}
+
+
+/* ==========================================================================
+   02. RESET GENERAL
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   03. ESTILOS GENERALES
+   ========================================================================== */
+
+body {
+
+    background: var(--color-dark);
+    color: var(--color-light);
+    font-family: var(--font-text);
+
+    /* Espacio para la navbar fija */
+    padding-top: 95px;
+
+}
+
+
+/* ==========================================================================
+   04. NAVBAR
+   ========================================================================== */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    /* Glassmorphism */
+    background: rgba(18, 18, 18, .58);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(212, 160, 23, .15);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .25);
+
+    padding: 1.2rem 0;
+
+    transition:
+        background .35s ease,
+        padding .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+/* Navbar después del scroll */
+
+.navbar.scrolled {
+
+    background: rgba(18, 18, 18, .92);
+
+    padding: .8rem 0;
+
+}
+
+
+/* ==========================================================================
+   05. LOGO
+   ========================================================================== */
+
+.logo {
+
+    width: 250px;
+
+    max-width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+.navbar-brand {
+
+    margin-right: 4rem;
+
+}
+
+
+/* ==========================================================================
+   06. MENÚ DE NAVEGACIÓN
+   ========================================================================== */
+
+.navbar-nav {
+
+    gap: 1.5rem;
+
+}
+
+.nav-item {
+
+    position: relative;
+
+}
+
+.nav-link {
+
+    color: var(--color-light);
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    letter-spacing: .4px;
+
+    position: relative;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+
+}
+
+
+/* Hover */
+
+.nav-link:hover {
+
+    color: var(--color-secondary);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Link activo */
+
+.nav-link.active {
+
+    color: var(--color-secondary);
+
+}
+
+
+/* Línea inferior del enlace activo */
+
+.nav-link.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 100%;
+
+    height: 2px;
+
+    background: var(--color-secondary);
+
+}
+
+
+/* ==========================================================================
+   07. SEPARADORES DEL MENÚ
+   ========================================================================== */
+
+.nav-item::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    right: -12px;
+
+    transform: translateY(-50%);
+
+    width: 1px;
+
+    height: 18px;
+
+    background: var(--color-primary);
+
+}
+
+.nav-item:last-child::after {
+
+    display: none;
+
+}
+
+
+/* ==========================================================================
+   08. BOTÓN DEL CARRITO
+   ========================================================================== */
+
+.cart-btn {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 56px;
+
+    height: 56px;
+
+    border: 2px solid var(--color-secondary);
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    transition: all .3s ease;
+
+}
+
+
+/* Hover */
+
+.cart-btn:hover {
+
+    transform: scale(1.08);
+
+    border-color: var(--color-secondary);
+
+    box-shadow: 0 0 18px rgba(212, 160, 23, .35);
+
+}
+
+
+/* ==========================================================================
+   09. ICONO DEL CARRITO
+   ========================================================================== */
+
+.cart-icon {
+
+    width: 28px;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+/* ==========================================================================
+   10. BADGE DEL CARRITO
+   ========================================================================== */
+
+.cart-badge {
+
+    position: absolute;
+
+    top: -6px;
+
+    right: -6px;
+
+    width: 22px;
+
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: var(--color-primary);
+
+    color: var(--color-white);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: .75rem;
+
+    font-weight: 700;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+
+}
+
+
+/* ==========================================================================
+   11. BOTÓN HAMBURGUESA
+   ========================================================================== */
+
+.navbar-toggler {
+
+    border: 2px solid var(--color-secondary);
+
+    padding: .45rem .65rem;
+
+    transition: var(--transition);
+
+}
+
+.navbar-toggler:hover {
+
+    border-color: var(--color-white);
+
+}
+
+.navbar-toggler:focus {
+
+    box-shadow: none;
+
+}
+
+.navbar-toggler-icon {
+
+    filter: invert(1);
+
+}
+
+
+/* ==========================================================================
+   12. RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 991px) {
+
+    /* Logo */
+
+    .logo {
+
+        width: 110px;
+
+    }
+
+    /* Menú desplegable */
+
+    .navbar-collapse {
+
+        padding-top: 1rem;
+
+    }
+
+    /* Lista del menú */
+
+    .navbar-nav {
+
+        text-align: center;
+
+        gap: 1rem;
+
+        margin: 2rem 0;
+
+    }
+
+    /* Eliminar separadores */
+
+    .nav-item::after {
+
+        display: none;
+
+    }
+
+    /* Links */
+
+    .nav-link {
+
+        font-size: 1rem;
+
+    }
+
+    /* Carrito centrado */
+
+    .cart-btn {
+
+        margin: auto;
+
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    body {
+
+        padding-top: 85px;
+
+    }
+
+    .logo {
+
+        width: 95px;
+
+    }
+
+    .cart-btn {
+
+        width: 50px;
+
+        height: 50px;
+
+    }
+
+    .cart-icon {
+
+        width: 24px;
+
+    }
+
+}
