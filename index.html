@@ -1,3 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mala-Landing</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--Header-->
+    <header></header>
+    <main>
+      <!--HERO-->
+      <section id="heroSection">
+        <!--Codigo bootstrap columnas-->
+        <div class="container text-center">
+          <div class="row align-items-cente">
+            <!--Columna 1 texto-->
+            <div class="col-4 col-sm-4 p-0 m-0" id="columna1">
+              <!--contenedor texto y boton-->  
+              <div class="contenedor-herotexto">
+                <p class="card-text parrafo-inicial-hero" id="parrafo-inicial">
+                    SABORES QUE CUENTAN 
+                  </p>
+                <h1 class="card-title" id="titulo-banner">
+                    LA ESENCIA DE CHENGDU
+                  </h1>
+                  <p class="card-text" id="parrafo-mala">
+                    Tradicion, picante y cultura en cada bocado. Bienvenido a <span id="malaNombre">MALA</span>. 
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-secondary botonHero"
+                    id="botonProductos"
+                    >EXPLORAR MENU</a
+                  >               
+                <div class="card-footer text-body-secondary"></div>
+              </div>
+            </div>
+            <!--Columna 2 imagen-->
+            <div class="col-8 col-sm-8">
+                <!--Div imagen-->
+                <img
+                    src="./imgNosotros/Patio tradicional chino bajo la lluvia.png"
+                    alt="Imagen patio tradicional chino"
+                    class="img-hero"
+                  />
+                
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--menu Dannis-->
+      <section></section>
+      <!--Sobre nosotros Monica-->
+      <section>
+        <div id="contenedor-sobreNostros">
+          <!--Codigo carrusel-->
+          <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <!--Carrusel-->
+              <div class="carousel-item active contenedor-fundador">
+                <!--Imagen y texto-->
+                <div class="card text-bg-dark" id="contenedor-textoimg">
+                  <img
+                    src="./imgNosotros/Patio tradicional chino bajo la lluvia.png"
+                    alt="Imagen patio tradicional chino"
+                    class="img-carrusel"
+                  />
+                  <div class="card-img-overlay divparrafo">
+                    <h1 class="card-title titulo">Sobre Nosotros</h1>
+                    <p class="card-text parrafo">
+                      En el corazón de nuestra cocina se encuentra el alma de
+                      Chengdu, la capital mundial de la gastronomía y cuna de la
+                      auténtica comida de Sichuan. Nacimos con el deseo de
+                      compartir la verdadera tradición culinaria de esta región
+                      con el mundo, donde cada plato es un equilibrio perfecto
+                      de sabores intensos, aromas profundos y el inconfundible
+                      toque del málà (el picante y hormigueo característico de
+                      la pimienta de Sichuan).No somos solo un restaurante;
+                      somos un viaje directo a los bulliciosos mercados y casas
+                      de té de Chengdu, diseñado para quienes buscan una
+                      experiencia gastronómica honesta, audaz y verdaderamente
+                      memorable.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item contenedor-fundador">
+                <!--Segunda slide de sobre nosotros-->
+                <div class="card text-bg-dark" id="contenedor-textoimg">
+                  <img
+                    src="./imgNosotros/Patio tradicional chino bajo la lluvia.png"
+                    alt="Imagen patio tradicional chino"
+                    class="img-carrusel"
+                  />
+                  <div class="card-img-overlay divparrafo">
+                    <h1 class="card-title titulo">Nuestro equipo</h1>
+                    <p class="card-text parrafo1">
+                      Somos un grupo de cinco desarrolladores fullStack,
+                      apasionados por la tecnologia. Tra
+                    </p>
+                    <p class="card-text parrafo1">
+                      Trabajamos cada dia para brindarte una experiencia
+                      autentica e inolvidable.
+                    </p>
+
+                    <!--Imagenes equipo-->
+                    <div class="contenedor-equipo">
+                      <!--1-->
+                      <div class="card contenedor-foto">
+                        <img
+                          src="./imgNosotros/foto-miguel.png"
+                          class="card-img-top foto"
+                          alt="..."
+                        />
+                        <div class="card-body div-nombrefoto">
+                          <h5 class="card-title nombreEquipo">
+                            Miguel Angel Ospina
+                          </h5>
+                        </div>
+                      </div>
+                      <!--2-->
+                      <div class="card contenedor-foto">
+                        <img
+                          src="./imgNosotros/foto-dannis.png"
+                          class="card-img-top foto"
+                          alt="..."
+                        />
+                        <div class="card-body div-nombrefoto">
+                          <h5 class="card-title nombreEquipo">
+                            Dannis Dayana Rincon
+                          </h5>
+                        </div>
+                      </div>
+                      <!--3-->
+                      <div class="card contenedor-foto">
+                        <img
+                          src="./imgNosotros/foto-kevin.png"
+                          class="card-img-top foto"
+                          alt="..."
+                        />
+                        <div class="card-body div-nombrefoto">
+                          <h5 class="card-title nombreEquipo">Kevin Soto</h5>
+                        </div>
+                      </div>
+                      <!--4-->
+                      <div class="card contenedor-foto">
+                        <img
+                          src="./imgNosotros/foto-moni.png"
+                          class="card-img-top foto"
+                          alt="..."
+                        />
+                        <div class="card-body div-nombrefoto">
+                          <h5 class="card-title nombreEquipo">
+                            Monica Jazmin Diaz
+                          </h5>
+                        </div>
+                      </div>
+                      <!--5-->
+                      <div class="card contenedor-foto">
+                        <img
+                          src="./imgNosotros/foto-michael.png"
+                          class="card-img-top foto"
+                          alt="..."
+                        />
+                        <div class="card-body div-nombrefoto">
+                          <h5 class="card-title nombreEquipo">
+                            Michael Espinal
+                          </h5>
+                        </div>
+                      </div>
+                      <!--fin fotos-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!--Fin de pagina sobre nosostros-->
+      <!--Contactanos Michael-->
+      <section></section>
+    </main>
+    <!--Footer-->
+    <footer></footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 <!DOCTYPE html>
 <html lang="es">
 
