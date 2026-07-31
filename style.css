@@ -1,3 +1,301 @@
+.mala-m-contact-section {
+  background: linear-gradient(rgba(31, 31, 31, 0.221), rgba(31, 31, 31, 0.85)), 
+              url('/img/Patio_chino_bajo\ _luvia.png') no-repeat center center;
+  background-size: cover;
+  padding: 5rem 0;
+  min-height: 100vh;
+  color: #F8F5EF;
+}
+
+.mala-m-contact-info h3 {
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: #D4A017;
+}
+
+.mala-m-contact-item {
+  margin-bottom: 1.5rem;
+}
+
+.mala-m-contact-item .mala-m-item-icon {
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: #B22222;
+}
+
+.mala-m-contact-item .mala-m-item-text p {
+  margin-bottom: 0;
+  color: rgba(248, 245, 239, 0.7);
+  font-size: 0.9rem;
+}
+
+.mala-m-contact-item .mala-m-item-text span {
+  display: block;
+  color: #D4A017;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.mala-m-contact-item .mala-m-item-text a {
+  color: rgba(248, 245, 239, 0.7);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.mala-m-contact-item .mala-m-item-text a:hover {
+  color: #D4A017;
+}
+
+.mala-m-form-glass-card {
+  background-color: rgba(31, 31, 31, 0.45); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border-radius: 12px;
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  color: #F8F5EF;
+}
+
+.mala-m-form-header h4 {
+  color: #F8F5EF;
+  font-weight: 500;
+}
+
+.mala-m-input {
+  background-color: rgba(248, 245, 239, 0.08) !important;
+  color: #F8F5EF !important;
+  border: 1px solid rgba(248, 245, 239, 0.15) !important;
+  border-radius: 6px;
+  padding: 12px 15px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.mala-m-input::placeholder {
+  color: rgba(248, 245, 239, 0.5);
+}
+
+.mala-m-input:focus {
+  background-color: rgba(248, 245, 239, 0.15) !important;
+  border-color: #D4A017 !important;
+  box-shadow: 0 0 8px rgba(212, 160, 23, 0.4) !important;
+  outline: none;
+}
+
+.mala-m-btn-submit {
+  background-color: #B22222;
+  color: #F8F5EF;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s background-color;
+  cursor: pointer;
+}
+
+.mala-m-btn-submit:hover {
+  background-color: #D4A017;
+  color: #1F1F1F;
+}
+
+.site-footer {
+  background-color: #080808;
+  color: rgba(248, 245, 239, 0.7);
+  font-size: 0.9rem;
+  border-top: 4px solid #B22222;
+}
+
+.site-footer p {
+  margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+  .footer-col {
+    border-right: 1px solid rgba(212, 160, 23, 0.15);
+  }
+}
+
+.footer-logo {
+  color: #D4A017;
+  font-family: serif;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.footer-subtitle {
+  color: #B22222;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.footer-heading {
+  color: #D4A017;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #B22222;
+}
+
+.footer-text {
+  line-height: 1.6;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(248, 245, 239, 0.5);
+  border-radius: 50%;
+  color: #F8F5EF;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #B22222;
+  border-color: #B22222;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: rgba(248, 245, 239, 0.7);
+  text-decoration: none;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.footer-links a:hover {
+  color: #D4A017;
+}
+
+.icon-red {
+  color: #B22222;
+  font-size: 0.85rem;
+  margin-right: 8px;
+}
+
+.icon-gold {
+  color: #D4A017;
+}
+
+.subscribe-form {
+  border: 1px solid rgba(248, 245, 239, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.subscribe-form input {
+  background: transparent;
+  border: none;
+  padding: 10px 15px;
+  color: #F8F5EF;
+  width: 100%;
+  outline: none;
+}
+
+.subscribe-form input::placeholder {
+  color: rgba(248, 245, 239, 0.4);
+}
+
+.subscribe-form button {
+  background-color: #B22222;
+  border: none;
+  color: #F8F5EF;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.subscribe-form button:hover {
+  background-color: #D4A017;
+  color: #1F1F1F;
+}
+
+.footer-features {
+  border-top: 1px solid rgba(212, 160, 23, 0.15);
+  border-bottom: 1px solid rgba(212, 160, 23, 0.15);
+  background-color: #111111;
+}
+
+.feature-item i {
+  font-size: 2rem;
+}
+
+.feature-item p {
+  color: rgba(248, 245, 239, 0.6);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+.footer-bottom {
+  background-color: #080808;
+}
+
+.copyright-text {
+  font-size: 0.8rem;
+  color: rgba(248, 245, 239, 0.5);
+}
+
+.payment-icons i {
+  font-size: 1.5rem;
+  color: rgba(248, 245, 239, 0.5);
+  margin-left: 15px;
+  transition: 0.3s;
+}
+
+.payment-icons i:hover {
+  color: #F8F5EF;
+}
+
+.footer-logo-img {
+  max-width: 180px;
+  height: auto;
+  display: block;
+}
+
+.feature-icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.footer-features {
+  border-top: 1px solid rgba(212, 160, 23, 0.15);
+  border-bottom: 1px solid rgba(212, 160, 23, 0.15);
+  background-color: #111111;
+}
+
+.feature-item p {
+  color: rgba(248, 245, 239, 0.6);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
 /* =============================================================================
    PROYECTO: MALA - Cocina de Chengdu
    ARCHIVO: style.css
