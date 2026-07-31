@@ -10,24 +10,119 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <!--Header-->
     <header></header>
     <main>
-        <!--HERO-->
-        <section></section>
-        <!--menu Dannis-->
-        <section></section>
-        <!--Sobre nosotros Monica-->
-        <section></section>
-        <!--Contactanos Michael-->
-        <section></section>
+      <!--HERO-->
+      <section></section>
+      <!--menu Dannis-->
+      <section></section>
+      <!--Sobre nosotros Monica-->
+      <section>
+        <div id="contenedor-sobreNostros">
+          <!--Codigo carrusel-->
+          <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <!--Carrusel-->
+              <div class="carousel-item active contenedor-fundador">
+                <!--Imagen y texto-->
+                <div class="card text-bg-dark" id="contenedor-textoimg">
+                  <img
+                    src="./imgNosotros/Patio tradicional chino bajo la lluvia.png"
+                    alt="Imagen patio tradicional chino"
+                    class="img-carrusel"
+                  />
+                  <div class="card-img-overlay divparrafo">
+                    <h1 class="card-title titulo">Sobre Nosotros</h1>
+                    <p class="card-text parrafo">
+                      En el corazón de nuestra cocina se encuentra el alma de
+                      Chengdu, la capital mundial de la gastronomía y cuna de la
+                      auténtica comida de Sichuan. Nacimos con el deseo de
+                      compartir la verdadera tradición culinaria de esta región
+                      con el mundo, donde cada plato es un equilibrio perfecto
+                      de sabores intensos, aromas profundos y el inconfundible
+                      toque del málà (el picante y hormigueo característico de
+                      la pimienta de Sichuan).No somos solo un restaurante;
+                      somos un viaje directo a los bulliciosos mercados y casas
+                      de té de Chengdu, diseñado para quienes buscan una
+                      experiencia gastronómica honesta, audaz y verdaderamente
+                      memorable.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item contenedor-fundador">
+                <!--Segunda slide de sobre nosotros-->
+                <div class="card text-bg-dark" id="contenedor-textoimg">
+                  <img
+                    src="./imgNosotros/Patio tradicional chino bajo la lluvia.png"
+                    alt="Imagen patio tradicional chino"
+                    class="img-carrusel"
+                  />
+                  <div class="card-img-overlay divparrafo">
+                    <h1 class="card-title titulo">Nuestro equipo</h1>
+                    <p class="card-text parrafo">
+                      Somos un grupo de cinco desarrolladores fullStack,
+                      apasionados por la tecnologia que brindan soluciones
+                      tecnologicas para empresas colombianas. Confiamos que
+                      nuestro trabajo conecte personas y negocios para impulsar
+                      el desarrollo de nuevas empresas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!--Contactanos Michael-->
+      <section></section>
     </main>
     <!--Footer-->
     <footer></footer>
-    
-
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
