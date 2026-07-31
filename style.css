@@ -35,15 +35,16 @@
     width: 70%;
     height: auto;   
     font-size: 2vw;
-    margin-bottom: 1.3vw; 
+    margin-bottom: 1.5vw; 
     text-align: center;
     background-color: rgba(0, 0, 0, 0.345);
     color: rgb(212, 160, 23);
+    font-family: "Cinzel Decorative";
 }
 .parrafo{
     width: 70%;
     height: auto;   
-    font-size: 1.5vw; /*revisar si es mejor con esta opcion */
+    font-size: 1.3vw; /*revisar si es mejor con esta opcion */
     text-align:justify;
     background-color: rgba(0, 0, 0, 0.438);
     color:  rgb(239, 230, 215);
