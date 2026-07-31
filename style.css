@@ -1,23 +1,22 @@
 /* =============================================================================
    PROYECTO: MALA - Cocina de Chengdu
-   MÓDULO: Barra de Navegación (Navbar)
+   ARCHIVO: style.css
    RESPONSABLE: Miguel Ospina
 
    DESCRIPCIÓN:
-   Estilos correspondientes a la barra de navegación principal del sitio.
-   Incluye:
+   Hoja de estilos principal del proyecto.
+
+   Contiene:
    01. Variables Globales
    02. Reset General
    03. Estilos Generales
-   04. Navbar
-   05. Logo
-   06. Menú de Navegación
-   07. Separadores
-   08. Carrito de Compras
-   09. Badge del Carrito
-   10. Botón Hamburguesa
-   11. Responsive
-
+   04. Hero Preloader
+   05. Navbar
+   06. Logo
+   07. Menú de Navegación
+   08. Separadores
+   09. Carrito
+   10. Responsive
 ============================================================================= */
 
 
@@ -27,20 +26,38 @@
 
 :root {
 
-    /* Colores */
-    --color-primary: #B22222;
-    --color-secondary: #D4A017;
-    --color-dark: #1F1F1F;
-    --color-light: #F8F5EF;
-    --color-white: #FFFFFF;
-    --color-gray: #E8E4DC;
+   /*==============================
+      PALETA DE COLORES
+    ==============================*/
 
-    /* Tipografías */
-    --font-title: "Cinzel", serif;
-    --font-text: "Inter", sans-serif;
+   --color-primary: #B22222;
+   --color-secondary: #D4A017;
 
-    /* Transiciones */
-    --transition: .3s ease;
+   --color-dark: #1F1F1F;
+   --color-dark-2: #121212;
+
+   --color-light: #F8F5EF;
+   --color-white: #FFFFFF;
+   --color-gray: #E8E4DC;
+
+   /*==============================
+      TIPOGRAFÍAS
+    ==============================*/
+
+   --font-title: "Cinzel", serif;
+   --font-text: "Inter", sans-serif;
+
+   /*==============================
+      EFECTOS
+    ==============================*/
+
+   --gradient-ignite: radial-gradient(circle,
+         rgba(178, 34, 34, .6) 0%,
+         rgba(178, 34, 34, .1) 60%,
+         rgba(0, 0, 0, 0) 100%);
+
+   --transition: .3s ease;
+
 }
 
 
@@ -48,10 +65,14 @@
    02. RESET GENERAL
    ========================================================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+
 }
 
 
@@ -61,15 +82,375 @@
 
 body {
 
-    background: var(--color-dark);
-    color: var(--color-light);
-    font-family: var(--font-text);
+   background: var(--color-dark);
+   color: var(--color-light);
 
-    /* Espacio para la navbar fija */
-    padding-top: 95px;
+   font-family: var(--font-text);
+
+   padding-top: 95px;
 
 }
 
+
+/*==========================================================================
+  HERO PRELOADER
+  ==========================================================================*/
+
+/*
+    Esta clase solo se aplica mientras el
+    Hero Preloader está activo.
+
+    No modifica el resto del sitio.
+*/
+
+body.mala-hero-body-override {
+
+   background: var(--color-light);
+
+   color: var(--color-dark);
+
+   font-family: var(--font-text);
+
+   overflow: hidden;
+
+}
+
+
+/*==========================================================================
+  OVERLAY
+  ==========================================================================*/
+
+.mala-hero-splash-overlay {
+
+   position: fixed;
+   inset: 0;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   background: linear-gradient(180deg,
+         var(--color-dark-2) 0%,
+         var(--color-dark) 80%,
+         var(--color-dark-2) 100%);
+
+   user-select: none;
+
+   z-index: 9999;
+
+   transition:
+      opacity 1.2s cubic-bezier(.4, 0, .2, 1),
+      visibility 1.2s ease;
+
+}
+
+
+/*==========================================================================
+  EFECTO DE IGNICIÓN
+  ==========================================================================*/
+
+.mala-hero-ignite-effect {
+
+   position: absolute;
+   inset: 0;
+
+   background: var(--gradient-ignite);
+
+   opacity: 0;
+
+   pointer-events: none;
+
+   z-index: 1;
+
+   transition: opacity .5s ease-out;
+
+}
+
+.mala-hero-splash-overlay.mala-hero-active .mala-hero-ignite-effect {
+
+   opacity: 1;
+
+}
+
+.mala-hero-splash-overlay.mala-hero-fade-out {
+
+   opacity: 0;
+
+   visibility: hidden;
+
+   pointer-events: none;
+
+}
+
+
+/*==========================================================================
+  CONTENIDO
+  ==========================================================================*/
+
+.mala-hero-splash-content {
+
+   text-align: center;
+
+   color: var(--color-light);
+
+   z-index: 5;
+
+}
+
+/* ==========================================================================
+   HERO PRELOADER - BRANDING
+   ========================================================================== */
+
+.mala-hero-logo-title {
+
+   font-family: var(--font-title);
+
+   font-size: 4rem;
+
+   letter-spacing: 6px;
+
+   color: var(--color-light);
+
+   text-shadow: 0 0 15px rgba(248, 245, 239, .30);
+
+}
+
+.mala-hero-logo-subtitle {
+
+   display: block;
+
+   margin-top: -8px;
+   margin-bottom: 50px;
+
+   font-family: var(--font-text);
+
+   font-size: .9rem;
+
+   font-weight: 500;
+
+   letter-spacing: 4px;
+
+   color: var(--color-secondary);
+
+}
+
+
+/* ==========================================================================
+   HERO PRELOADER - BOTÓN HOLD
+   ========================================================================== */
+
+.mala-hero-hold-container {
+
+   position: relative;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   width: 160px;
+   height: 160px;
+
+   margin: 0 auto;
+
+   cursor: pointer;
+
+}
+
+.mala-hero-progress-ring {
+
+   position: absolute;
+
+   inset: 0;
+
+   transform: rotate(-90deg);
+
+   pointer-events: none;
+
+}
+
+.mala-hero-progress-ring__circle {
+
+   stroke-dasharray: 440;
+   stroke-dashoffset: 440;
+
+   transition: stroke-dashoffset .1s linear;
+
+}
+
+
+/* ==========================================================================
+   EFECTO NEÓN
+   ========================================================================== */
+
+.mala-hero-splash-overlay.mala-hero-active #mala-hero-progressCircle {
+
+   stroke: #ff3300;
+
+   filter:
+      drop-shadow(0 0 8px #ff4500) drop-shadow(0 0 18px var(--color-primary));
+
+}
+
+
+/* ==========================================================================
+   TEXTO DEL BOTÓN
+   ========================================================================== */
+
+.mala-hero-hold-text {
+
+   position: relative;
+
+   z-index: 6;
+
+   text-align: center;
+
+}
+
+.mala-hero-hold-main-text {
+
+   font-size: .85rem;
+
+   font-weight: 700;
+
+   letter-spacing: 2px;
+
+   line-height: 1.3;
+
+}
+
+.mala-hero-hold-sub-text {
+
+   margin-top: 5px;
+
+   font-size: .7rem;
+
+   opacity: .7;
+
+}
+
+
+/* ==========================================================================
+   SISTEMA DE CHISPAS
+   ========================================================================== */
+
+.mala-hero-fire-sparks {
+
+   position: absolute;
+
+   inset: 0;
+
+   pointer-events: none;
+
+   z-index: 4;
+
+}
+
+.mala-hero-spark {
+
+   position: absolute;
+
+   top: 50%;
+   left: 50%;
+
+   width: 5px;
+   height: 5px;
+
+   border-radius: 50%;
+
+   pointer-events: none;
+
+   box-shadow:
+      0 0 8px #FFCC00,
+      0 0 14px #FF5500;
+
+   animation: malaHeroFlySpark .8s cubic-bezier(.25, 1, .5, 1) forwards;
+
+}
+
+@keyframes malaHeroFlySpark {
+
+   0% {
+
+      opacity: 1;
+
+      transform:
+         translate(-50%, -50%) translate(0, 0) scale(1);
+
+   }
+
+   70% {
+
+      opacity: .9;
+
+   }
+
+   100% {
+
+      opacity: 0;
+
+      transform:
+         translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(.2);
+
+   }
+
+}
+
+
+/* ==========================================================================
+   NUBES DECORATIVAS
+   ========================================================================== */
+
+.mala-hero-cloud-wrapper {
+
+   position: absolute;
+
+   bottom: 0;
+
+   width: 50%;
+   max-width: 600px;
+
+   opacity: .4;
+
+   pointer-events: none;
+
+   z-index: 3;
+
+   transition:
+      transform .1s linear,
+      opacity .3s ease;
+
+}
+
+.mala-hero-cloud-left {
+
+   left: 50%;
+
+   transform: translateX(-100%);
+
+}
+
+.mala-hero-cloud-right {
+
+   left: 50%;
+
+   transform: translateX(0);
+
+}
+
+.mala-hero-cloud-wrapper img {
+
+   display: block;
+
+   width: 100%;
+   height: auto;
+
+}
+
+.mala-hero-splash-overlay.mala-hero-active .mala-hero-cloud-wrapper {
+
+   opacity: .95;
+
+}
 
 /* ==========================================================================
    04. NAVBAR
@@ -77,43 +458,42 @@ body {
 
 .navbar {
 
-    position: fixed;
+   position: fixed;
 
-    top: 0;
-    left: 0;
-    right: 0;
+   inset: 0 0 auto 0;
 
-    width: 100%;
+   width: 100%;
 
-    z-index: 1000;
+   z-index: 1000;
 
-    /* Glassmorphism */
-    background: rgba(18, 18, 18, .58);
+   background: rgba(18, 18, 18, .58);
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+   backdrop-filter: blur(16px);
+   -webkit-backdrop-filter: blur(16px);
 
-    border-bottom: 1px solid rgba(212, 160, 23, .15);
+   border-bottom: 1px solid rgba(212, 160, 23, .15);
 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, .25);
+   box-shadow: 0 4px 20px rgba(0, 0, 0, .25);
 
-    padding: 1.2rem 0;
+   padding: 1.2rem 0;
 
-    transition:
-        background .35s ease,
-        padding .35s ease,
-        box-shadow .35s ease;
+   transition:
+      background .35s ease,
+      padding .35s ease,
+      box-shadow .35s ease;
 
 }
 
 
-/* Navbar después del scroll */
+/* ==========================================================================
+   NAVBAR SCROLL
+   ========================================================================== */
 
 .navbar.scrolled {
 
-    background: rgba(18, 18, 18, .92);
+   background: rgba(18, 18, 18, .92);
 
-    padding: .8rem 0;
+   padding: .8rem 0;
 
 }
 
@@ -124,21 +504,21 @@ body {
 
 .logo {
 
-    width: 250px;
+   width: 250px;
 
-    max-width: 100%;
+   max-width: 100%;
 
-    height: auto;
+   height: auto;
 
-    object-fit: contain;
+   object-fit: contain;
 
-    display: block;
+   display: block;
 
 }
 
 .navbar-brand {
 
-    margin-right: 4rem;
+   margin-right: 4rem;
 
 }
 
@@ -149,103 +529,90 @@ body {
 
 .navbar-nav {
 
-    gap: 1.5rem;
+   gap: 1.5rem;
 
 }
 
 .nav-item {
 
-    position: relative;
+   position: relative;
 
 }
 
 .nav-link {
 
-    color: var(--color-light);
+   position: relative;
 
-    font-size: 1rem;
+   color: var(--color-light);
 
-    font-weight: 600;
+   font-size: 1rem;
 
-    letter-spacing: .4px;
+   font-weight: 600;
 
-    position: relative;
+   letter-spacing: .4px;
 
-    transition:
-        color .3s ease,
-        transform .3s ease;
+   transition:
+      color .3s ease,
+      transform .3s ease;
 
 }
-
-
-/* Hover */
 
 .nav-link:hover {
 
-    color: var(--color-secondary);
+   color: var(--color-secondary);
 
-    transform: translateY(-2px);
+   transform: translateY(-2px);
 
 }
-
-
-/* Link activo */
 
 .nav-link.active {
 
-    color: var(--color-secondary);
+   color: var(--color-secondary);
 
 }
 
-
-/* Línea inferior del enlace activo */
-
 .nav-link.active::after {
 
-    content: "";
+   content: "";
 
-    position: absolute;
+   position: absolute;
 
-    left: 0;
+   left: 0;
+   bottom: -8px;
 
-    bottom: -8px;
+   width: 100%;
+   height: 2px;
 
-    width: 100%;
-
-    height: 2px;
-
-    background: var(--color-secondary);
+   background: var(--color-secondary);
 
 }
 
 
 /* ==========================================================================
-   07. SEPARADORES DEL MENÚ
+   07. SEPARADORES
    ========================================================================== */
 
 .nav-item::after {
 
-    content: "";
+   content: "";
 
-    position: absolute;
+   position: absolute;
 
-    top: 50%;
+   top: 50%;
+   right: -12px;
 
-    right: -12px;
+   transform: translateY(-50%);
 
-    transform: translateY(-50%);
+   width: 1px;
+   height: 18px;
 
-    width: 1px;
-
-    height: 18px;
-
-    background: var(--color-primary);
+   background: var(--color-primary);
 
 }
 
 .nav-item:last-child::after {
 
-    display: none;
+   display: none;
 
 }
 
@@ -256,572 +623,541 @@ body {
 
 .cart-btn {
 
-    position: relative;
+   position: relative;
 
-    display: flex;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
-    justify-content: center;
+   width: 56px;
+   height: 56px;
 
-    align-items: center;
+   border: 2px solid var(--color-secondary);
+   border-radius: 50%;
 
-    width: 56px;
+   text-decoration: none;
 
-    height: 56px;
-
-    border: 2px solid var(--color-secondary);
-
-    border-radius: 50%;
-
-    text-decoration: none;
-
-    transition: all .3s ease;
+   transition: var(--transition);
 
 }
 
-
-/* Hover */
-
 .cart-btn:hover {
 
-    transform: scale(1.08);
+   transform: scale(1.08);
 
-    border-color: var(--color-secondary);
-
-    box-shadow: 0 0 18px rgba(212, 160, 23, .35);
+   box-shadow: 0 0 18px rgba(212, 160, 23, .35);
 
 }
 
 
 /* ==========================================================================
-   09. ICONO DEL CARRITO
+   ICONO DEL CARRITO
    ========================================================================== */
 
 .cart-icon {
 
-    width: 28px;
+   width: 28px;
 
-    height: auto;
+   height: auto;
 
-    display: block;
+   display: block;
 
 }
 
 
 /* ==========================================================================
-   10. BADGE DEL CARRITO
+   BADGE
    ========================================================================== */
 
 .cart-badge {
 
-    position: absolute;
+   position: absolute;
 
-    top: -6px;
+   top: -6px;
+   right: -6px;
 
-    right: -6px;
+   width: 22px;
+   height: 22px;
 
-    width: 22px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
-    height: 22px;
+   border-radius: 50%;
 
-    border-radius: 50%;
+   background: var(--color-primary);
 
-    background: var(--color-primary);
+   color: var(--color-white);
 
-    color: var(--color-white);
+   font-size: .75rem;
+   font-weight: 700;
 
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    font-size: .75rem;
-
-    font-weight: 700;
-
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+   box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
 
 }
 
 
 /* ==========================================================================
-   11. BOTÓN HAMBURGUESA
+   BOTÓN HAMBURGUESA
    ========================================================================== */
 
 .navbar-toggler {
 
-    border: 2px solid var(--color-secondary);
+   border: 2px solid var(--color-secondary);
 
-    padding: .45rem .65rem;
+   padding: .45rem .65rem;
 
-    transition: var(--transition);
+   transition: var(--transition);
 
 }
 
 .navbar-toggler:hover {
 
-    border-color: var(--color-white);
+   border-color: var(--color-white);
 
 }
 
 .navbar-toggler:focus {
 
-    box-shadow: none;
+   box-shadow: none;
 
 }
 
 .navbar-toggler-icon {
 
-    filter: invert(1);
+   filter: invert(1);
 
 }
 
-
 /* ==========================================================================
-   12. RESPONSIVE
+   09. RESPONSIVE NAVBAR
    ========================================================================== */
 
-@media (max-width: 991px) {
+@media (max-width:991px) {
 
-    /* Logo */
+   .logo {
+      width: 110px;
+   }
 
-    .logo {
+   .navbar-collapse {
+      padding-top: 1rem;
+   }
 
-        width: 110px;
+   .navbar-nav {
 
-    }
+      text-align: center;
 
-    /* Menú desplegable */
+      gap: 1rem;
 
-    .navbar-collapse {
+      margin: 2rem 0;
 
-        padding-top: 1rem;
+   }
 
-    }
+   .nav-item::after {
 
-    /* Lista del menú */
+      display: none;
 
-    .navbar-nav {
+   }
 
-        text-align: center;
+   .nav-link {
 
-        gap: 1rem;
+      font-size: 1rem;
 
-        margin: 2rem 0;
+   }
 
-    }
+   .cart-btn {
 
-    /* Eliminar separadores */
+      margin: auto;
 
-    .nav-item::after {
-
-        display: none;
-
-    }
-
-    /* Links */
-
-    .nav-link {
-
-        font-size: 1rem;
-
-    }
-
-    /* Carrito centrado */
-
-    .cart-btn {
-
-        margin: auto;
-
-    }
+   }
 
 }
 
-@media (max-width: 576px) {
+@media (max-width:576px) {
 
-    body {
+   body {
 
-        padding-top: 85px;
+      padding-top: 85px;
 
-    }
+   }
 
-    .logo {
+   .logo {
 
-        width: 95px;
+      width: 95px;
 
-    }
+   }
 
-    .cart-btn {
+   .cart-btn {
 
-        width: 50px;
+      width: 50px;
+      height: 50px;
 
-        height: 50px;
+   }
 
-    }
+   .cart-icon {
 
-    .cart-icon {
+      width: 24px;
 
-        width: 24px;
-
-    }
+   }
 
 }
+
 
 /* ==========================================================================
-   CARRITO DE COMPRAS
+   10. CARRITO DE COMPRAS
    ========================================================================== */
 
 .shopping-cart {
 
-    position: fixed;
+   position: fixed;
 
-    top: 0;
+   top: 0;
+   right: 0;
 
-    right: 0;
+   width: 420px;
+   height: 100vh;
 
-    width: 420px;
+   display: flex;
+   flex-direction: column;
 
-    height: 100vh;
+   overflow-y: auto;
 
-    background: #111111;
+   background: #111;
 
-    border-left: 1px solid rgba(212, 160, 23, .20);
+   border-left: 1px solid rgba(212, 160, 23, .20);
 
-    box-shadow: -10px 0 30px rgba(0, 0, 0, .40);
+   box-shadow: -10px 0 30px rgba(0, 0, 0, .40);
 
-    z-index: 2000;
+   z-index: 2000;
 
-    transition: right .4s ease;
-
-    display: flex;
-
-    flex-direction: column;
-
-    overflow-y: auto;
+   transition: right .4s ease;
 
 }
 
 .shopping-cart.active {
 
-    right: 0;
+   right: 0;
 
 }
 
+
 /* ==========================================================================
-   OVERLAY
+   OVERLAY DEL CARRITO
    ========================================================================== */
 
 .cart-overlay {
 
-    position: fixed;
+   position: fixed;
 
-    inset: 0;
+   inset: 0;
 
-    background: rgba(0, 0, 0, .55);
+   background: rgba(0, 0, 0, .55);
 
-    backdrop-filter: blur(4px);
+   backdrop-filter: blur(4px);
 
-    opacity: 0;
+   opacity: 0;
 
-    visibility: hidden;
+   visibility: hidden;
 
-    transition: .3s;
+   transition: var(--transition);
 
-    z-index: 1900;
+   z-index: 1900;
 
 }
 
-/* ==========================================================================
-  FIN - CARRITO DE COMPRAS
-   ========================================================================== */
 
 /* ==========================================================================
-   ENCABEZADO
+   ENCABEZADO DEL CARRITO
    ========================================================================== */
 
 .cart-header {
 
-    display: flex;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 
-    justify-content: space-between;
+   padding: 2rem;
 
-    align-items: center;
-
-    padding: 2rem;
-
-    border-bottom: 1px solid rgba(212, 160, 23, .15);
+   border-bottom: 1px solid rgba(212, 160, 23, .15);
 
 }
 
+
 /* ==========================================================================
-   TITULO
+   TÍTULO
    ========================================================================== */
 
 .cart-title {
 
-    font-family: var(--font-title);
+   font-family: var(--font-title);
 
-    color: var(--color-secondary);
+   font-size: 1.8rem;
 
-    font-size: 1.8rem;
+   text-transform: uppercase;
 
-    text-transform: uppercase;
+   letter-spacing: 1px;
 
-    letter-spacing: 1px;
+   color: var(--color-secondary);
 
 }
 
+
 /* ==========================================================================
-   BOTON CERRADO
+   BOTÓN CERRAR
    ========================================================================== */
 
 .cart-close {
 
-    background: none;
+   border: none;
 
-    border: none;
+   background: none;
 
-    cursor: pointer;
+   cursor: pointer;
 
-    transition: .3s;
+   transition: var(--transition);
 
 }
 
 .cart-close:hover {
 
-    transform: rotate(90deg);
+   transform: rotate(90deg);
 
 }
 
+
 /* ==========================================================================
-   PRODUCTOS DEL CARRITO
+   PRODUCTOS
    ========================================================================== */
 
 .cart-items {
 
-    flex: 1;
+   flex: 1;
 
-    padding: 2rem;
+   padding: 2rem;
 
 }
 
 .cart-item {
 
-    display: flex;
+   display: flex;
 
-    align-items: flex-start;
+   align-items: flex-start;
 
-    gap: 1rem;
+   gap: 1rem;
 
-    padding-bottom: 1.8rem;
+   margin-bottom: 1.8rem;
 
-    margin-bottom: 1.8rem;
+   padding-bottom: 1.8rem;
 
-    border-bottom: 1px solid rgba(212, 160, 23, .15);
+   border-bottom: 1px solid rgba(212, 160, 23, .15);
 
 }
 
 .cart-item:last-child {
 
-    margin-bottom: 0;
+   margin-bottom: 0;
 
 }
 
 
-/* Imagen */
+/* ==========================================================================
+   IMAGEN DEL PRODUCTO
+   ========================================================================== */
 
 .cart-item-image {
 
-    flex-shrink: 0;
+   flex-shrink: 0;
 
 }
 
 .cart-item-image img {
 
-    width: 90px;
+   width: 90px;
+   height: 90px;
 
-    height: 90px;
+   object-fit: cover;
 
-    object-fit: cover;
+   border-radius: 10px;
 
-    border-radius: 10px;
-
-    border: 1px solid rgba(212, 160, 23, .20);
+   border: 1px solid rgba(212, 160, 23, .20);
 
 }
 
 
-/* Información */
+/* ==========================================================================
+   INFORMACIÓN
+   ========================================================================== */
 
 .cart-item-info {
 
-    flex: 1;
+   flex: 1;
 
 }
 
 .cart-item-title {
 
-    font-family: var(--font-title);
+   margin-bottom: .5rem;
 
-    color: var(--color-secondary);
+   font-family: var(--font-title);
 
-    font-size: 1.1rem;
+   font-size: 1.1rem;
 
-    margin-bottom: .5rem;
+   color: var(--color-secondary);
 
 }
 
 .cart-item-price {
 
-    color: var(--color-primary);
+   margin-bottom: 1rem;
 
-    font-size: 1.1rem;
+   font-size: 1.1rem;
 
-    font-weight: 700;
+   font-weight: 700;
 
-    margin-bottom: 1rem;
+   color: var(--color-primary);
 
 }
 
-
-/* Cantidad */
+/* ==========================================================================
+   CANTIDAD
+   ========================================================================== */
 
 .quantity-control {
 
-    display: flex;
+   display: flex;
 
-    align-items: center;
+   justify-content: space-between;
+   align-items: center;
 
-    justify-content: space-between;
+   width: 110px;
+   height: 40px;
 
-    width: 110px;
+   border: 1px solid rgba(212, 160, 23, .25);
 
-    height: 40px;
-
-    border: 1px solid rgba(212, 160, 23, .25);
-
-    border-radius: 8px;
+   border-radius: 8px;
 
 }
 
 .quantity-btn {
 
-    width: 36px;
+   width: 36px;
+   height: 100%;
 
-    height: 100%;
+   border: none;
 
-    border: none;
+   background: none;
 
-    background: none;
+   color: var(--color-secondary);
 
-    color: var(--color-secondary);
+   font-size: 1.3rem;
 
-    cursor: pointer;
+   cursor: pointer;
 
-    font-size: 1.3rem;
-
-    transition: .3s;
+   transition: var(--transition);
 
 }
 
 .quantity-btn:hover {
 
-    background: rgba(212, 160, 23, .10);
+   background: rgba(212, 160, 23, .10);
 
 }
 
 .quantity {
 
-    color: var(--color-light);
+   color: var(--color-light);
 
-    font-weight: 600;
+   font-weight: 600;
 
 }
 
 
-/* Botón eliminar */
+/* ==========================================================================
+   ELIMINAR PRODUCTO
+   ========================================================================== */
 
 .remove-item {
 
-    border: none;
+   border: none;
 
-    background: none;
+   background: none;
 
-    cursor: pointer;
+   cursor: pointer;
 
-    transition: .3s;
+   transition: var(--transition);
 
 }
 
 .remove-item img {
 
-    width: 22px;
+   width: 22px;
 
 }
 
 .remove-item:hover {
 
-    transform: scale(1.15);
+   transform: scale(1.15);
 
 }
 
+
 /* ==========================================================================
-RESUMEN DEL CARRITO
+   RESUMEN DEL CARRITO
    ========================================================================== */
 
 .cart-summary {
 
-    padding: 2rem;
+   padding: 2rem;
 
-    border-top: 1px solid rgba(212, 160, 23, .15);
+   border-top: 1px solid rgba(212, 160, 23, .15);
 
 }
 
 .summary-row {
 
-    display: flex;
+   display: flex;
 
-    justify-content: space-between;
+   justify-content: space-between;
+   align-items: center;
 
-    align-items: center;
+   margin-bottom: 1rem;
 
-    margin-bottom: 1rem;
+   font-size: 1rem;
 
-    font-size: 1rem;
-
-    color: var(--color-light);
+   color: var(--color-light);
 
 }
 
 .summary-row.total {
 
-    margin-top: 1.5rem;
+   margin-top: 1.5rem;
 
-    padding-top: 1rem;
+   padding-top: 1rem;
 
-    border-top: 1px solid rgba(212, 160, 23, .20);
+   border-top: 1px solid rgba(212, 160, 23, .20);
 
-    font-size: 1.2rem;
+   font-size: 1.2rem;
 
-    font-weight: 700;
+   font-weight: 700;
 
-    color: var(--color-secondary);
+   color: var(--color-secondary);
 
 }
 
+
 /* ==========================================================================
-   16. BOTONES DEL CARRITO
+   BOTONES DEL CARRITO
    ========================================================================== */
 
 .cart-actions {
 
-    padding: 0 2rem 2rem;
+   display: flex;
 
-    display: flex;
+   flex-direction: column;
 
-    flex-direction: column;
+   gap: 1rem;
 
-    gap: 1rem;
+   padding: 0 2rem 2rem;
 
 }
 
@@ -830,31 +1166,31 @@ RESUMEN DEL CARRITO
 
 .btn-checkout {
 
-    width: 100%;
+   width: 100%;
 
-    padding: 1rem;
+   padding: 1rem;
 
-    border: none;
+   border: none;
 
-    border-radius: 8px;
+   border-radius: 8px;
 
-    background: var(--color-secondary);
+   background: var(--color-secondary);
 
-    color: var(--color-dark);
+   color: var(--color-dark);
 
-    font-weight: 700;
+   font-weight: 700;
 
-    cursor: pointer;
+   cursor: pointer;
 
-    transition: var(--transition);
+   transition: var(--transition);
 
 }
 
 .btn-checkout:hover {
 
-    transform: translateY(-2px);
+   transform: translateY(-2px);
 
-    box-shadow: 0 8px 20px rgba(212, 160, 23, .35);
+   box-shadow: 0 8px 20px rgba(212, 160, 23, .35);
 
 }
 
@@ -863,88 +1199,56 @@ RESUMEN DEL CARRITO
 
 .btn-continue {
 
-    width: 100%;
+   width: 100%;
 
-    padding: 1rem;
+   padding: 1rem;
 
-    border: 1px solid rgba(212, 160, 23, .25);
+   border: 1px solid rgba(212, 160, 23, .25);
 
-    border-radius: 8px;
+   border-radius: 8px;
 
-    background: transparent;
+   background: transparent;
 
-    color: var(--color-light);
+   color: var(--color-light);
 
-    cursor: pointer;
+   cursor: pointer;
 
-    transition: var(--transition);
+   transition: var(--transition);
 
 }
 
 .btn-continue:hover {
 
-    background: rgba(212, 160, 23, .08);
+   background: rgba(212, 160, 23, .08);
 
 }
 
-/* ==========================================================================
-   17. RESPONSIVE
-   --------------------------------------------------------------------------
-   Responsable: Miguel Ospina
-
-   Adaptación del carrito para dispositivos móviles y tablets.
-
-   Breakpoints:
-   - <= 991px : Tablets
-   - <= 576px : Celulares
-   ========================================================================== */
-
 
 /* ==========================================================================
-   TABLETS
+   RESPONSIVE DEL CARRITO
    ========================================================================== */
 
-@media (max-width: 991px){
+@media (max-width:991px) {
 
-    /* Panel del carrito */
+   .shopping-cart {
 
-    .shopping-cart{
+      width: 380px;
 
-        width: 380px;
+   }
 
-    }
+   .cart-header,
+   .cart-items,
+   .cart-summary {
 
-    /* Header */
+      padding: 1.5rem;
 
-    .cart-header{
+   }
 
-        padding: 1.5rem;
+   .cart-actions {
 
-    }
+      padding: 0 1.5rem 1.5rem;
 
-    /* Productos */
-
-    .cart-items{
-
-        padding: 1.5rem;
-
-    }
-
-    /* Resumen */
-
-    .cart-summary{
-
-        padding: 1.5rem;
-
-    }
-
-    /* Botones */
-
-    .cart-actions{
-
-        padding: 0 1.5rem 1.5rem;
-
-    }
+   }
 
 }
 
@@ -953,149 +1257,120 @@ RESUMEN DEL CARRITO
    CELULARES
    ========================================================================== */
 
-@media (max-width: 576px){
+@media (max-width:576px) {
 
-    /* Panel del carrito */
+   .shopping-cart {
 
-    .shopping-cart{
+      width: 100%;
 
-        width: 100%;
+      right: -100%;
 
-        right: -100%;
+      border-left: none;
 
-        border-left: none;
+   }
 
-    }
+   .shopping-cart.active {
 
-    /* Estado abierto */
+      right: 0;
 
-    .shopping-cart.active{
+   }
 
-        right: 0;
+   .cart-header {
 
-    }
+      padding: 1.25rem;
 
-    /* Header */
+   }
 
-    .cart-header{
+   .cart-title {
 
-        padding: 1.25rem;
+      font-size: 1.4rem;
 
-    }
+   }
 
-    /* Título */
+   .cart-items {
 
-    .cart-title{
+      padding: 1.25rem;
 
-        font-size: 1.4rem;
+   }
 
-    }
+   .cart-item {
 
-    /* Productos */
+      gap: .8rem;
 
-    .cart-items{
+   }
 
-        padding: 1.25rem;
+   .cart-item-image img {
 
-    }
+      width: 75px;
+      height: 75px;
 
-    /* Tarjeta del producto */
+   }
 
-    .cart-item{
+   .cart-item-title {
 
-        gap: .8rem;
+      font-size: 1rem;
 
-    }
+   }
 
-    /* Imagen */
+   .cart-item-price {
 
-    .cart-item-image img{
+      font-size: 1rem;
 
-        width: 75px;
+   }
 
-        height: 75px;
+   .quantity-control {
 
-    }
+      width: 100px;
+      height: 36px;
 
-    /* Nombre */
+   }
 
-    .cart-item-title{
+   .quantity-btn {
 
-        font-size: 1rem;
+      width: 32px;
 
-    }
+      font-size: 1.1rem;
 
-    /* Precio */
+   }
 
-    .cart-item-price{
+   .remove-item img {
 
-        font-size: 1rem;
+      width: 18px;
 
-    }
+   }
 
-    /* Cantidad */
+   .cart-summary {
 
-    .quantity-control{
+      padding: 1.25rem;
 
-        width: 100px;
+   }
 
-        height: 36px;
+   .summary-row {
 
-    }
+      font-size: .95rem;
 
-    .quantity-btn{
+   }
 
-        width: 32px;
+   .summary-row.total {
 
-        font-size: 1.1rem;
+      font-size: 1.1rem;
 
-    }
+   }
 
-    /* Botón eliminar */
+   .cart-actions {
 
-    .remove-item img{
+      padding: 0 1.25rem 1.25rem;
 
-        width: 18px;
+   }
 
-    }
+   .btn-checkout,
+   .btn-continue {
 
-    /* Resumen */
+      padding: .9rem;
 
-    .cart-summary{
+      font-size: .95rem;
 
-        padding: 1.25rem;
-
-    }
-
-    .summary-row{
-
-        font-size: .95rem;
-
-    }
-
-    .summary-row.total{
-
-        font-size: 1.1rem;
-
-    }
-
-    /* Botones */
-
-    .cart-actions{
-
-        padding: 0 1.25rem 1.25rem;
-
-    }
-
-    .btn-checkout,
-
-    .btn-continue{
-
-        padding: .9rem;
-
-        font-size: .95rem;
-
-    }
+   }
 
 }
 
@@ -1104,34 +1379,38 @@ RESUMEN DEL CARRITO
    CELULARES PEQUEÑOS
    ========================================================================== */
 
-@media (max-width: 360px){
+@media (max-width:360px) {
 
-    .cart-item{
+   .cart-item {
 
-        flex-direction: column;
+      flex-direction: column;
 
-        align-items: center;
+      align-items: center;
 
-        text-align: center;
+      text-align: center;
 
-    }
+   }
 
-    .cart-item-info{
+   .cart-item-info {
 
-        width: 100%;
+      width: 100%;
 
-    }
+   }
 
-    .quantity-control{
+   .quantity-control {
 
-        margin: auto;
+      margin: auto;
 
-    }
+   }
 
-    .remove-item{
+   .remove-item {
 
-        align-self: flex-end;
+      align-self: flex-end;
 
-    }
+   }
 
 }
+
+/* ==========================================================================
+   FIN DEL ARCHIVO
+   ========================================================================== */

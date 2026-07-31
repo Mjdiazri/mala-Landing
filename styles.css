@@ -7,7 +7,7 @@
   --mala-hero-negro-carbon-dark: #121212;
   --mala-hero-dorado-imperial: #D4A017;
   --mala-hero-marfil-arroz: #F8F5EF;
-  --mala-hero-degradado-ignite: radial-gradient(circle, rgba(178,34,34,0.6) 0%, rgba(178,34,34,0.1) 60%, rgba(0,0,0,0) 100%);
+  --mala-hero-degradado-ignite: radial-gradient(circle, rgba(178, 34, 34, 0.6) 0%, rgba(178, 34, 34, 0.1) 60%, rgba(0, 0, 0, 0) 100%);
 }
 
 /* --- REGLA ESPECÍFICA PARA EVITAR SOBREESCRIBIR OTROS BODIES --- */
@@ -15,7 +15,8 @@ body.mala-hero-body-override {
   font-family: 'Inter', sans-serif;
   background-color: var(--mala-hero-marfil-arroz);
   color: var(--mala-hero-negro-carbon);
-  overflow: hidden; /* Bloquea el scroll mientras la pantalla de bloqueo está activa */
+  overflow: hidden;
+  /* Bloquea el scroll mientras la pantalla de bloqueo está activa */
 }
 
 /* ==========================================================================
@@ -27,11 +28,12 @@ body.mala-hero-body-override {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(180deg, var(--mala-hero-negro-carbon-dark) 0%, var(--mala-hero-negro-carbon) 80%, rgba(18,18,18,1) 100%);
+  background: linear-gradient(180deg, var(--mala-hero-negro-carbon-dark) 0%, var(--mala-hero-negro-carbon) 80%, rgba(18, 18, 18, 1) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Asegura estar por encima de los módulos de tus compañeros */
+  z-index: 9999;
+  /* Asegura estar por encima de los módulos de tus compañeros */
   user-select: none;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s ease;
 }
@@ -170,9 +172,11 @@ body.mala-hero-body-override {
     opacity: 1;
     transform: translate(-50%, -50%) translate(0, 0) scale(1);
   }
+
   70% {
     opacity: 0.9;
   }
+
   100% {
     opacity: 0;
     transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(0.2);
