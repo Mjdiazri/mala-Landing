@@ -1,0 +1,51 @@
+:root {
+    /* Colores */
+    --color-primary: #B22222;
+    --color-secondary: #D4A017;
+    --color-dark: #1F1F1F;
+    --color-light: #F8F5EF;
+    --color-white: #FFFFFF;
+    --color-gray: #E8E4DC;
+
+    /* Tipografías */
+    --font-title: "Cinzel", serif;
+    --font-text: "Inter", sans-serif;
+
+    /* Transiciones */
+    --transition: .3s ease;
+}
+
+
+#imagenPrincipal{
+    width:100%;
+    height:650px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.info-plato{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:45%;
+    padding:35px;
+
+    background:linear-gradient(
+        to right,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.5),
+        transparent
+    );
+}
+
+#nombrePlato{
+    font-size:3rem;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+#descripcionPlato{
+    font-size:1.1rem;
+    line-height:1.6;
+}
+
